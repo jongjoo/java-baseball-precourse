@@ -10,4 +10,8 @@ public class GameUtil {
 
     }
 
+    public void compareGameNumber(){
+
+    }
+
 }

@@ -6,16 +6,7 @@ public class GameService {
 
     }
 
-    public void selectRandomNumber(){
 
-    }
 
-    public void scannerClientNumber(){
-
-    }
-
-    public void compareGameNumber(){
-
-    }
 
 }
