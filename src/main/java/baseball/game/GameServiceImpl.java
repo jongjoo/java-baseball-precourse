@@ -7,21 +7,15 @@ import java.util.List;
 
 public class GameServiceImpl implements GameService{
 
-    final static String CORRECT_ANSWER_MESSAGE = "3개의 숫자를 모두 맞히셧습니다! 게임종료";
-    final static String RESTART_MESSAGE = "3개의 숫자를 모두 맞히셧습니다! 게임종료";
-
-
     public void run() {
         String input = "";
         do {
             RandomNumberService randomNumberService = new RandomNumberService();
             List<Integer> randomList = randomNumberService.selectRandomNumber();
             gameCore(randomList);
-
-            System.out.println(CORRECT_ANSWER_MESSAGE);
-            System.out.println(RESTART_MESSAGE);
+            System.out.println(GameConst.CORRECT_ANSWER_MESSAGE);
+            System.out.println(GameConst.RESTART_MESSAGE);
             input = Console.readLine();
-
         } while ("1".equals(input));
     }
 

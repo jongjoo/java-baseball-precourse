@@ -1,8 +1,10 @@
 package baseball.game;
 
-import java.util.List;
 
 public interface GameService {
 
+    /**
+     * 게임 실행.
+     */
     void run();
 }

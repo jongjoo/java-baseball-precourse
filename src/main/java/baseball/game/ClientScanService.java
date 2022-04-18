@@ -10,9 +10,7 @@ import java.util.Set;
 public class ClientScanService {
 
     public List<Integer> scannerClientNumber() {
-//        Scanner scanner = new Scanner(System.in);
-//        String inputs = scanner.next();
-        System.out.println("숫자를 입력해주세요");
+        System.out.println(GameConst.INPUT_NUMBER_MESSAGE);
         String inputs = Console.readLine();
 
         List<Integer> inputList = new ArrayList<>();
@@ -20,7 +18,6 @@ public class ClientScanService {
             inputList.add(Integer.valueOf(inputs.charAt(i)));
         }
         validCorrect(inputList);
-
         return inputList;
     }
 
