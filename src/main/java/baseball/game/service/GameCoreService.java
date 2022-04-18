@@ -49,16 +49,39 @@ public class GameCoreService {
 
     private void sendMessage(int strike, int ball) {
         StringBuilder stringBuilder = new StringBuilder();
-        if (strike > 0) {
-            stringBuilder.append(strike).append("스트라이크");
-        }
+        builderBallMessage(stringBuilder, ball);
+        builderStrikeMessage(stringBuilder, strike, ball);
+        builderNotThingMessage(stringBuilder, strike, ball);
+        System.out.println(stringBuilder);
+    }
+
+    private StringBuilder builderBallMessage(StringBuilder stringBuilder, int ball) {
         if (ball > 0) {
             stringBuilder.append(ball).append("볼");
         }
+        return stringBuilder;
+    }
+
+    private StringBuilder builderStrikeMessage(StringBuilder stringBuilder, int strike, int ball) {
+        if (strike > 0) {
+            builderEmptyMessage(stringBuilder, ball);
+            stringBuilder.append(strike).append("스트라이크");
+        }
+        return stringBuilder;
+    }
+
+    private StringBuilder builderEmptyMessage(StringBuilder stringBuilder, int ball) {
+        if (ball > 0) {
+            stringBuilder.append(" ");
+        }
+        return stringBuilder;
+    }
+
+    private StringBuilder builderNotThingMessage(StringBuilder stringBuilder, int strike, int ball) {
         if (strike == 0 && ball == 0) {
             stringBuilder.append("낫싱");
         }
-        System.out.println(stringBuilder);
+        return stringBuilder;
     }
 
     private boolean sendResult(int strike) {

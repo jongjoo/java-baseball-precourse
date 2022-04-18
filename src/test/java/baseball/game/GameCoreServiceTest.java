@@ -35,6 +35,7 @@ class GameCoreServiceTest {
         ball = containListInSet(randomSet, inputList);
         ball -= strike;
 
+        // then
         assertTrue(strike < 4, "스트라이크가 4보다 큽니다.");
         assertTrue(ball < 4, "볼이 4보다 큽니다.");
         assertTrue(strike > -1, "스트라이크가 -1보다 작습니다.");

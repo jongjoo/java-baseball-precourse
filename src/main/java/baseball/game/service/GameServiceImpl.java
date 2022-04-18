@@ -6,7 +6,7 @@ import camp.nextstep.edu.missionutils.Console;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameServiceImpl implements GameService{
+public class GameServiceImpl implements GameService {
 
     public void run() {
         String input = "";
@@ -14,20 +14,28 @@ public class GameServiceImpl implements GameService{
             RandomNumberService randomNumberService = new RandomNumberService();
             List<Integer> randomList = randomNumberService.selectRandomNumber();
             gameCore(randomList);
-            System.out.println(GameConst.CORRECT_ANSWER_MESSAGE);
-            System.out.println(GameConst.RESTART_MESSAGE);
+            printStartMessage();
             input = Console.readLine();
         } while ("1".equals(input));
+        printEndMessage();
     }
 
-    public void gameCore(List<Integer> randomList) {
+    private void gameCore(List<Integer> randomList) {
         ClientScanService clientScanService = new ClientScanService();
         GameCoreService gameCoreService = new GameCoreService();
         List<Integer> clientList = new ArrayList<>();
         do {
             clientList = clientScanService.scannerClientNumber();
         } while (gameCoreService.compareGameNumber(randomList, clientList));
+    }
 
+    private void printStartMessage() {
+        System.out.println(GameConst.CORRECT_ANSWER_MESSAGE);
+        System.out.println(GameConst.RESTART_MESSAGE);
+    }
+
+    private void printEndMessage() {
+        System.out.println(GameConst.GAME_OVER_MESSAGE);
     }
 
 

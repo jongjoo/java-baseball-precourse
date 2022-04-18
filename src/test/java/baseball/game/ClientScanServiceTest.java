@@ -12,10 +12,9 @@ import java.util.List;
 import java.util.Set;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ClientScanServiceTest {
-
 
 
     @BeforeEach
@@ -51,11 +50,14 @@ class ClientScanServiceTest {
     @ParameterizedTest
     @ValueSource(strings = {"우테프", "야구겜", "승리한", "문자다"})
     public void validCorrectInteger(String inputList) {
+        // given
         int size = 0;
         for (int i = 0; i < inputList.length(); i++) {
             size += isInteger(inputList.charAt(i));
         }
 
+        // when
+        // then
         final int finalSize = size;
         assertThatThrownBy(() -> {
             if (finalSize < GameConst.SIZE_NUMBER) {
