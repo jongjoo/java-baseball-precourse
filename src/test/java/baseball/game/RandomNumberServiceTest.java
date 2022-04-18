@@ -1,5 +1,6 @@
 package baseball.game;
 
+import baseball.game.constant.GameConst;
 import camp.nextstep.edu.missionutils.Randoms;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -13,8 +14,6 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RandomNumberServiceTest {
-
-
 
     private List<Integer> list;
 

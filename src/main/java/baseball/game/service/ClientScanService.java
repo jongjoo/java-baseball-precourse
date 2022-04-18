@@ -1,5 +1,6 @@
-package baseball.game;
+package baseball.game.service;
 
+import baseball.game.constant.GameConst;
 import camp.nextstep.edu.missionutils.Console;
 
 import java.util.ArrayList;

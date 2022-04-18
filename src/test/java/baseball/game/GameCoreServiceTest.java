@@ -12,12 +12,11 @@ import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class GameUtilTest {
+class GameCoreServiceTest {
 
     @BeforeEach
     void setUp() {
     }
-
 
     @DisplayName("두값을 비교한다.")
     @ParameterizedTest

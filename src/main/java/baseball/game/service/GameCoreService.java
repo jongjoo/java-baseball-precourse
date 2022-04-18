@@ -1,11 +1,10 @@
-package baseball.game;
+package baseball.game.service;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class GameUtil {
+public class GameCoreService {
 
     public boolean compareGameNumber(List<Integer> randomList, List<Integer> inputList) {
         int strike = 0;
@@ -14,21 +13,8 @@ public class GameUtil {
         strike = compareTwoArray(randomList, inputList);
         ball = containListInSet(randomSet, inputList);
         ball -= strike;
-
-        System.out.println(randomList + " - " + inputList);
-
         sendMessage(strike, ball);
         return sendResult(strike);
-    }
-
-    private List<Integer> builderListInteger(String input) {
-        List<Integer> list = new ArrayList<>();
-
-        for (int i = 0; i < input.length(); i++) {
-            list.add((int) input.charAt(i));
-        }
-
-        return list;
     }
 
     private int compareTwoArray(List<Integer> firstList, List<Integer> secondList) {
@@ -63,7 +49,6 @@ public class GameUtil {
 
     private void sendMessage(int strike, int ball) {
         StringBuilder stringBuilder = new StringBuilder();
-
         if (strike > 0) {
             stringBuilder.append(strike).append("스트라이크");
         }

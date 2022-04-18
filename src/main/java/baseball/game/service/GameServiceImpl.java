@@ -1,5 +1,6 @@
-package baseball.game;
+package baseball.game.service;
 
+import baseball.game.constant.GameConst;
 import camp.nextstep.edu.missionutils.Console;
 
 import java.util.ArrayList;
@@ -21,11 +22,11 @@ public class GameServiceImpl implements GameService{
 
     public void gameCore(List<Integer> randomList) {
         ClientScanService clientScanService = new ClientScanService();
-        GameUtil gameUtil = new GameUtil();
+        GameCoreService gameCoreService = new GameCoreService();
         List<Integer> clientList = new ArrayList<>();
         do {
             clientList = clientScanService.scannerClientNumber();
-        } while (gameUtil.compareGameNumber(randomList, clientList));
+        } while (gameCoreService.compareGameNumber(randomList, clientList));
 
     }
 

@@ -1,6 +1,6 @@
 package baseball;
 
-import baseball.game.GameServiceImpl;
+import baseball.game.service.GameServiceImpl;
 
 public class Application {
     public static void main(String[] args) {
