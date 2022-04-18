@@ -1,7 +1,10 @@
 package baseball;
 
+import baseball.game.service.GameServiceImpl;
+
 public class Application {
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+        GameServiceImpl gameServiceImpl = new GameServiceImpl();
+        gameServiceImpl.run();
     }
 }
