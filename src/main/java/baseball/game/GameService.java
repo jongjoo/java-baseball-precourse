@@ -1,12 +1,8 @@
 package baseball.game;
 
-public class GameService {
+import java.util.List;
 
-    public void gameCore(){
+public interface GameService {
 
-    }
-
-
-
-
+    void run();
 }

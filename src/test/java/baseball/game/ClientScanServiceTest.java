@@ -25,7 +25,7 @@ class ClientScanServiceTest {
     @DisplayName("사용자에게 올바른 3개의 숫자를 받았는지 확인한다.")
     @ParameterizedTest
     @ValueSource(strings = {"123", "456", "789", "126", "513"})
-    void scannerClientNumber(String inputs) {
+    void validCorrectNumber(String inputs) {
 
         // given
         // when
@@ -50,10 +50,10 @@ class ClientScanServiceTest {
     @DisplayName("사용자에게 올바른 3개의 숫자를 받았는지 확인한다. - Integer")
     @ParameterizedTest
     @ValueSource(strings = {"우테프", "야구겜", "승리한", "문자다"})
-    public void isValidInteger(String inputList) {
+    public void validCorrectInteger(String inputList) {
         int size = 0;
         for (int i = 0; i < inputList.length(); i++) {
-            size += isValidInteger(inputList.charAt(i));
+            size += isInteger(inputList.charAt(i));
         }
 
         final int finalSize = size;
@@ -62,10 +62,9 @@ class ClientScanServiceTest {
                 throw new IllegalArgumentException("숫자가 아닌 값이 입력되었습니다.");
             }
         }).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("숫자가 아닌 값이 입력되었습니다.");
-
     }
 
-    public int isValidInteger(int number) {
+    public int isInteger(int number) {
         if (number > GameConst.ASCII_ZERO_NUMBER && number < GameConst.ASCII_TEN_NUMBER) {
             return 1;
         }
